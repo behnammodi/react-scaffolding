@@ -1,3 +1,5 @@
+import enums from '../enums';
+
 const common = {
 
 };
@@ -12,5 +14,5 @@ const production = {
 
 export default {
   ...common,
-  ...(process.env.REACT_APP_ENV === 'production' ? production : development),
+  ...(process.env.APP_ENV === enums.APP_ENV_PRODUCTION ? production : development),
 };
