@@ -1,3 +1,1 @@
-export default {
-  red: '#ff0000',
-};
+export default {};
