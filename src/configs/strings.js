@@ -4,7 +4,7 @@ const locales = {
   faIR: {
     1000: '',
   },
-  en_US: {
+  enUS: {
     1000: '',
   },
 };
