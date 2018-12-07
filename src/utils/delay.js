@@ -1,0 +1,1 @@
+export default delay => new Promise(done => setTimeout(done, delay));
