@@ -7,16 +7,22 @@ import { state } from 'jetstate';
  * @param {class} Component 
  * @param {array} fields array of state field
  */
-function connect(Component, fields) {
-  return class Time extends PureComponent {
+const connect = (Component, fields) => {
+  return class Connect extends PureComponent {
+    unsubscribes = [];
     state = fields.reduce((a, b) => ({
       ...a,
       [b]: state[b],
     }), {});
     componentDidMount = () =>
       fields.forEach(field =>
-        on(field, () =>
-          this.setState({ [field]: state[field] })));
+        this.unsubscribes.push(
+          on(field, () =>
+            this.setState({ [field]: state[field] }))));
+
+    componentWillUnmount = () =>
+      this.unsubscribes.forEach(unsubscribe =>
+        unsubscribe());
 
     render = () =>
       <Component {...this.props} {...this.state} />
