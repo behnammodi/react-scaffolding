@@ -1,9 +1,9 @@
+import React, { PureComponent } from 'react';
 import { on } from 'jetemit';
 import { state } from 'jetstate';
-import React, { PureComponent } from 'react';
 
 /**
- * 
+ * connect component with jetstate and jetemit
  * @param {class} Component 
  * @param {array} fields array of state field
  */
