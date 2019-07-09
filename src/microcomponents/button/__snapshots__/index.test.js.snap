@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly with action 1`] = `
+<button
+  className="button-0-1-1"
+  disabled={false}
+  onClick={[Function]}
+>
+  Hello IB
+</button>
+`;
+
+exports[`Renders correctly with disabled 1`] = `
+<button
+  className="button-0-1-1"
+  disabled={true}
+>
+  Hello IB
+</button>
+`;
+
+exports[`Renders correctly with text 1`] = `
+<button
+  className="button-0-1-1"
+>
+  Hello IB
+</button>
+`;

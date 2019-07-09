@@ -1,9 +1,41 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { styles } from 'styles';
 
-class ReactClass extends Component {
+const classes = styles(theme => ({
+  something: {
+    someprop: theme.unit
+  }
+}));
+
+class Name extends Component {
+  state = {};
+
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {}
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {}
+
+  componentWillUnmount() {}
+
   render() {
-    return;
+    return <div className={classes.something}>{someprop}</div>;
   }
 }
 
-export default ReactClass;
+Name.propTypes = {
+  someprop: PropTypes.number.isRequired
+};
+
+Name.defaultProps = {
+  someprop: 1
+};
+
+export default Name;

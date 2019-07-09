@@ -1,5 +1,6 @@
-import enums from '../enums';
+import enums from '../configs/enums';
 
 export default (...args) => {
-  if (process.env.APP_ENV === enums.APP_ENV_DEVELOPMENT) console.log('▶︎', ...args);
-}
+  if (process.env.NODE_ENV === enums.APP_ENV_DEVELOPMENT)
+    console.log('▶︎', ...args);
+};
